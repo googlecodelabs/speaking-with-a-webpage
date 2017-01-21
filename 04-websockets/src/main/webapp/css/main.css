@@ -1,0 +1,134 @@
+/**
+ * Copyright 2017, Google, Inc.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #222;
+  font-family: 'Open Sans', arial, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  padding: 2em;
+  background: -webkit-gradient(radial, center center, 500, center center, 1400, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.6))) #fff;
+  background: -moz-radial-gradient(farthest-side, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2) 150%) #fff;
+  background: -webkit-radial-gradient(farthest-side, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2) 150%) #fff;
+  background: -ms-radial-gradient(farthest-side, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2) 150%) #fff;
+  background: -o-radial-gradient(farthest-side, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2) 150%) #fff;
+  background: radial-gradient(farthest-side, rgba(0,0,0,0) 90%, rgba(0,0,0,0.2) 150%) #fff;
+  box-sizing: border-box;
+}
+a {
+  color: navy;
+}
+
+body > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  -webkit-perspective: 800;
+  -webkit-transform-style: preserve-3d;
+}
+section > * {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fft {
+  position: absolute;
+  z-index: 1;
+  -webkit-box-reflect: below 5px -webkit-linear-gradient(top, transparent, transparent 50%, rgba(255,255,255,0.2));
+}
+#fft {
+  transform: translateX(-50%) rotateX(-30deg) rotateY(30deg);
+}
+#fft2 {
+  transform: translateX(-50%) rotateX(-30deg) rotateY(-30deg);
+}
+
+#playbutton {
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  border: 4px solid rgba(0,0,0,.9);
+}
+
+#playbutton.playing {
+  background: rgba(0,0,0,.25);
+  opacity: 0.1;
+}
+#playbutton::before {
+  content: '\feff';
+  display: inline-block;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0,0,0,.9);
+  border-width: 30px 0 30px 40px;
+  box-sizing: border-box;
+  height:0;
+  width: 50%;
+  margin-left: 45px;
+}
+
+#playbutton.playing::before, #playbutton.playing:hover::before {
+  content: '\feff';
+  display: inline-block;
+  border: 4px solid rgba(0,0,0,.9);
+  border-width: 0 20px;
+  box-sizing: border-box;
+  height: 60%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#transcript {
+  font-size: 1.2em;
+  line-height: 1.3em;
+  max-width: 50em;
+  height: calc(1.3em * 5);
+  position: relative;
+  min-width: 40em;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: translateY(-1em);
+}
+#transcript>div {
+  position: absolute;
+  bottom: 0;
+  padding: .7em;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -1rem);
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(195,215,264, .5);
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .5em;
+}
+#transcript>div:empty {
+  visibility: hidden;
+}
