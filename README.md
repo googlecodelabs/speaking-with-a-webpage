@@ -21,11 +21,6 @@ and `8443` by default. Open them up on the Compute Engine firewall:
 Create a webapp for App Engine Flexible that can serve static javascript, a
 static `index.html`, and a dynamic controller.
 
-    cd 01-hello-static/
-    mvn clean jetty:run
-
-## Step 2
-
 When using `getUserInput` to access microphone input, browsers require the
 connection to be `https`. Configure the app for https - for development
 purposes, a self-signed certificate suffices.
@@ -36,18 +31,23 @@ Generate a self-signed SSL cert for now:
         -keystore src/main/resources/jetty.keystore \
         -storepass secret -keypass secret -dname "CN=localhost"
 
-## Step 3
+Then run:
+
+    cd 01-hello-https/
+    mvn clean jetty:run
+
+## Step 2
 
 Use the WebAudio API on the frontend to get microphone data.
 
-## Step 4
+## Step 3
 
 Stream the raw audio data from the client to the server using WebSockets.
 
 When on an `https` webpage, websocket connections are required to be secure
 `wss`.
 
-## Step 5
+## Step 4
 
 Use the Speech API to stream transcriptions of speech to the client.
 

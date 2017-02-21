@@ -38,11 +38,6 @@
       <type>jar</type>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty.websocket</groupId>
-      <artifactId>websocket-servlet</artifactId>
-      <version>9.4.1.v20170120</version>
-    </dependency>
   </dependencies>
 
   <build>
