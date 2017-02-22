@@ -65,6 +65,9 @@
         <version>${jetty.maven.plugin}</version>
         <configuration>
           <jettyXml>jetty.xml,jetty-ssl.xml,jetty-https.xml</jettyXml>
+          <webApp>
+            <defaultsDescriptor>webdefault.xml</defaultsDescriptor>
+          </webApp>
         </configuration>
       </plugin>
 
