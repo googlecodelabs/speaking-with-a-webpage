@@ -249,7 +249,7 @@
       el: document.getElementById('transcript').childNodes[0],
       current: document.createElement('div')
     };
-    transcript.el.appendchild(transcript.current);
+    transcript.el.appendChild(transcript.current);
     /**
      * This function is called with the transcription result from the server.
      */
