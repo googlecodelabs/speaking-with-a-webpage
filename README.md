@@ -18,7 +18,7 @@ and `8443` by default. Open them up on the Compute Engine firewall:
 
 ## Step 1
 
-Create a webapp for App Engine Flexible that can serve static javascript, a
+Create a webapp on Google Compute Engine that can serve static javascript, a
 static `index.html`, and a dynamic controller.
 
 When using `getUserInput` to access microphone input, browsers require the
